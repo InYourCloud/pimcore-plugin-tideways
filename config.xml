@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config>
+    <additionalWatcher>Pimcore\Controller\Plugin\TagManagement::dispatchLoopShutdown</additionalWatcher>
+    <additionalWatcher>Website\Tool\MobileDetect::isMobile</additionalWatcher>
+    <additionalWatcher>Website\Tool\MobileDetect::isTablet</additionalWatcher>
+</config>
