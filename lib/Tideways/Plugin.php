@@ -54,8 +54,7 @@ class Plugin extends PluginLib\AbstractPlugin implements PluginLib\PluginInterfa
         \Tideways\Profiler::detectFramework(\Tideways\Profiler::FRAMEWORK_ZEND_FRAMEWORK1);
 
         $sampleRate = (int)$config->tideways->get('sampleRate', 10);
-
-        \Tideways\Profiler::start($apiKey, $sampleRate); // 20% Sample-Rate
+        \Tideways\Profiler::start($apiKey, $sampleRate);
 
         foreach ($config->tideways->watchers->watcher as $watcher) {
             \Tideways\Profiler::watch($watcher);

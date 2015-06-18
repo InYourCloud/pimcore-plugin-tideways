@@ -11,9 +11,11 @@ and configuring the Tideways Profiler.
 ## Code Example / Method of Operation
 
 If installed and enabled, the following Tideways properties
-are configured:
+are configured via the website/var/config/tideways.xml file:
 
 * \Tideways\Profiler::detectFramework(\Tideways\Profiler::FRAMEWORK_ZEND_FRAMEWORK1);
+* \Tideways\Profiler::start($apiKey, $sampleRate);
+* \Tideways\Profiler::watch($watcher); // all configured watchers from the XML file
 
 ## Motivation
 
