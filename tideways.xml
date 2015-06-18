@@ -1,6 +1,14 @@
 <?xml version="1.0"?>
-<config>
-    <additionalWatcher>Pimcore\Controller\Plugin\TagManagement::dispatchLoopShutdown</additionalWatcher>
-    <additionalWatcher>Website\Tool\MobileDetect::isMobile</additionalWatcher>
-    <additionalWatcher>Website\Tool\MobileDetect::isTablet</additionalWatcher>
-</config>
+<zend-config xmlns:zf="http://framework.zend.com/xml/zend-config-xml/1.0/">
+    <tideways>
+        <installed>0</installed>
+        <enabled>0</enabled>
+        <sampleRate>10</sampleRate>
+        <apiKey>CHANGE-ME</apiKey>
+        <watchers>
+            <watcher>Pimcore\Controller\Plugin\TagManagement::dispatchLoopShutdown</watcher>
+            <watcher>Website\Tool\MobileDetect::isMobile</watcher>
+            <watcher>Website\Tool\MobileDetect::isTablet</watcher>
+        </watchers>
+    </tideways>
+</zend-config>
