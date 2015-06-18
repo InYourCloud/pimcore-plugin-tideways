@@ -1,0 +1,20 @@
+{
+    "name": "basilicom-pimcore-plugin/tideways",
+    "description": "Configure and use the Tideways Profiler with Pimcore",
+    "type": "pimcore-plugin",
+    "license": "BSD-3-Clause",
+    "keywords": ["pimcore","tideways","plugin","profiler","trace","performance"],
+    "homepage": "http://basilicom.de/en/pimcore",
+    "authors": [
+        {
+            "name": "basilicom Team",
+            "email": "info@basilicom.de",
+            "homepage": "http://basilicom.de/",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "pimcore/installer-plugin": "~1.3"
+    }
+}
