@@ -88,7 +88,6 @@ class Plugin extends PluginLib\AbstractPlugin implements PluginLib\PluginInterfa
 
         $config = new \Zend_Config_Xml(self::getConfigName(), null, array('allowModifications' => true));
         $config->tideways->installed = 1;
-        $config->tideways->enabled = 1;
 
         $configWriter = new \Zend_Config_Writer_Xml();
         $configWriter->setConfig($config);

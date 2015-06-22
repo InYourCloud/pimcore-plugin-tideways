@@ -46,6 +46,8 @@ Example:
 Install the plugin via the Pimcore Extension Manager. Press the "Configure" button of the
 Tideways plugin from within the Extension Manager and set the "apiKey" property accordingly.
 
+In order to transmit info to the Tideways servers, set the "enabled" property to "1", too.
+
 ## API Reference
 
 The following static methods are provided as a wrapper for the original
