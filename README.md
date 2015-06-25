@@ -1,6 +1,12 @@
 Tideways Pimcore Plugin
 ================================================
 
+[![Codacy Badge](https://www.codacy.com/project/badge/219fb4f776944b4ebaf770889133d39e)](https://www.codacy.com/app/basilicom/pimcore-plugin-tideways)
+[![Dependency Status](https://www.versioneye.com/php/basilicom-pimcore-plugin:tideways/1.0.2/badge.svg)](https://www.versioneye.com/php/basilicom-pimcore-plugin:tideways/1.0.2)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/basilicom/pimcore-plugin-tideways/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/basilicom/pimcore-plugin-tideways/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/basilicom/pimcore-plugin-tideways/badges/build.png?b=master)](https://scrutinizer-ci.com/g/basilicom/pimcore-plugin-tideways/build-status/master)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/27503bf4-789a-4856-bc83-783e24c2e6af/mini.png)](https://insight.sensiolabs.com/projects/27503bf4-789a-4856-bc83-783e24c2e6af)
+
 Developer info: [Pimcore at basilicom](http://basilicom.de/en/pimcore)
 
 ## Synopsis
