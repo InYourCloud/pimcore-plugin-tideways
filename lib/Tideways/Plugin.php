@@ -52,7 +52,7 @@ class Plugin extends PluginLib\AbstractPlugin implements PluginLib\PluginInterfa
         }
 
         // exclude pimcore backend traces?
-        if (!\Pimcore\Tool::isFrontend() && ($config->tideways->get('excludeBackend', '1') == '0')) {
+        if (!\Pimcore\Tool::isFrontend() && ($config->tideways->get('excludeBackend', '1') == '1')) {
             return;
         }
 
