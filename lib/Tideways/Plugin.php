@@ -67,10 +67,6 @@ class Plugin extends PluginLib\AbstractPlugin implements PluginLib\PluginInterfa
 
         self::$isEnabled = true;
 
-        // @todo add exception handler watcher:
-        // \Tideways\Profiler::detectExceptionFunction('my_exception_handler');
-        //\Tideways\Profiler::detectExceptionFunction('\Whoops\Run::handleException');
-
     }
 
     /**
