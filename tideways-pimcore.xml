@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package xmlns="http://qafoolabs.com/schemas/profiler/package" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://qafoolabs.com/schemas/profiler/package https://qafoolabs.com/package.xml">
+    <name>Pimcore 3.0.x</name>
+    <description>Pimcore Content Management System</description>
+    <namespace>Pimcore_</namespace>
+    <namespace>Pimcore\</namespace>
+    <namespace>Website\</namespace>
+    <namespace>Object\</namespace>
+    <significant-calls>
+        <call>Pimcore\Model\Object\AbstractObject::save</call>
+    </significant-calls>
+  <counters>
+    <counter critical="1">
+      <name>Pimcore: Object Save Calls</name>
+      <description>Number of save() calls.</description>
+      <call>Pimcore\Model\Object\AbstractObject::save</call>
+    </counter>
+  </counters>
+</package>
