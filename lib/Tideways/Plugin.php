@@ -51,6 +51,11 @@ class Plugin extends PluginLib\AbstractPlugin implements PluginLib\PluginInterfa
             return;
         }
 
+        // exclude pimcore backend traces?
+        if (!\Pimcore\Tool::isFrontend() && ($config->tideways->get('excludeBackend', '1') == '0')) {
+            return;
+        }
+
         \Tideways\Profiler::detectFramework(\Tideways\Profiler::FRAMEWORK_ZEND_FRAMEWORK1);
 
         $sampleRate = (int)$config->tideways->get('sampleRate', 10);

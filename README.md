@@ -48,6 +48,21 @@ Tideways plugin from within the Extension Manager and set the "apiKey" property 
 
 In order to transmit info to the Tideways servers, set the "enabled" property to "1", too.
 
+Limit the sample rate by changing the "sampleRate".
+
+If you want to profile/trace backend requests, too: Set the "excludeBackend" property in
+the xml file to "0".
+  
+You can add additional method watchers - take a look at the example section in the
+config file.
+
+Optionally, upload the sample package config file "tideways-pimcore.xml" via the
+Tideways UI for custom package configuration - to be configured here:  
+
+  https://app.tideways.io/o/basilicom/[TIDEWAYS-APPLICATION-NAME]/settings/packages
+
+See: https://github.com/QafooLabs/profiler-packages/blob/master/package.xsd
+
 ## API Reference
 
 The following static methods are provided as a wrapper for the original
