@@ -5,6 +5,7 @@
         <enabled>0</enabled>
         <sampleRate>10</sampleRate>
         <excludeBackend>1</excludeBackend>
+        <excludeCli>1</excludeCli>
         <apiKey></apiKey>
         <watchers>
             <watcher>Pimcore\Controller\Plugin\TagManagement::dispatchLoopShutdown</watcher>

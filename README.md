@@ -58,6 +58,9 @@ Limit the sample rate by changing the "sampleRate".
 
 If you want to profile/trace backend requests, too: Set the "excludeBackend" property in
 the xml file to "0".
+
+If you want to profile/trace CLI requests, too: Set the "excludeCli" property in
+the xml file to "0" (this is needed for tracing maintenance.php runs).
   
 You can add additional method watchers - take a look at the example section in the
 config file.

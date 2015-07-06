@@ -17,6 +17,8 @@ class Plugin extends PluginLib\AbstractPlugin implements PluginLib\PluginInterfa
     const SAMPLE_CONFIG_XML = "/Tideways/tideways.xml";
     const CONFIG_XML = '/var/config/tideways.xml';
 
+    const TRANSACTION_NAME_MAINTENANCE = 'Maintenance';
+
     /**
      * @var bool store enabled state - set in config xml
      */
@@ -56,6 +58,13 @@ class Plugin extends PluginLib\AbstractPlugin implements PluginLib\PluginInterfa
             return;
         }
 
+        if (
+            ($config->tideways->get('excludeCli', '1') == '1')
+            && (substr(php_sapi_name(), 0, 3) == 'cli')
+        ) {
+            return;
+        }
+
         \Tideways\Profiler::detectFramework(\Tideways\Profiler::FRAMEWORK_ZEND_FRAMEWORK1);
 
         $sampleRate = (int)$config->tideways->get('sampleRate', 10);
@@ -67,6 +76,18 @@ class Plugin extends PluginLib\AbstractPlugin implements PluginLib\PluginInterfa
 
         self::$isEnabled = true;
 
+        \Pimcore::getEventManager()->attach("system.maintenance", array($this, 'performMaintenance'));
+
+    }
+
+    /**
+     * Gathers metrics and sends them off to librato
+     */
+    public function performMaintenance()
+    {
+        if (self::$isEnabled) {
+            \Tideways\Profiler::setTransactionName(self::TRANSACTION_NAME_MAINTENANCE);
+        }
     }
 
     /**
