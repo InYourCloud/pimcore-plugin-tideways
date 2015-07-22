@@ -223,7 +223,7 @@ class Plugin extends PluginLib\AbstractPlugin implements PluginLib\PluginInterfa
             CURLOPT_RETURNTRANSFER => 1,
             CURLOPT_FORBID_REUSE => 1,
             CURLOPT_TIMEOUT => 4,
-            CURLOPT_HTTPHEADER, array(
+            CURLOPT_HTTPHEADER => array(
                 'Content-Type: application/json',
                 'Content-Length: ' . strlen($dataString))
             ),
