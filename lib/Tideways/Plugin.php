@@ -236,8 +236,7 @@ class Plugin extends PluginLib\AbstractPlugin implements PluginLib\PluginInterfa
 
         curl_setopt_array($curlHandle, $curlOptions); 
 
-        if (! $result = curl_exec($curlHandle)) { 
-            // trigger_error(curl_error($curlHandle)); 
+        if (! curl_exec($curlHandle)) { 
             return false;
         } 
         curl_close($curlHandle); 
