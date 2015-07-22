@@ -25,6 +25,11 @@ class Plugin extends PluginLib\AbstractPlugin implements PluginLib\PluginInterfa
     private static $isEnabled = false;
 
     /**
+     * @var string cache apiKey - set in config xml
+     */
+    private static $apiKey = null;
+    
+    /**
      * Initialize Plugin
      *
      * Sets up Tideways, watchers, apiKey, various config options
@@ -52,6 +57,8 @@ class Plugin extends PluginLib\AbstractPlugin implements PluginLib\PluginInterfa
         if ($apiKey == '') {
             return;
         }
+        
+        self::$apiKey = $apiKey;
 
         // exclude pimcore backend traces?
         if (!\Pimcore\Tool::isFrontend() && ($config->tideways->get('excludeBackend', '1') == '1')) {
@@ -202,9 +209,9 @@ class Plugin extends PluginLib\AbstractPlugin implements PluginLib\PluginInterfa
     public static function createEvent($name, $environment='production', $type='release')
     {
         $data = array(
-            "apiKey": "api key here",
-            "name": $name,
-            "environment": $environment,
+            "apiKey" => self::$apiKey,
+            "name" => $name,
+            "environment" => $environment,
             "type" => $type
         );
         
