@@ -206,7 +206,7 @@ class Plugin extends PluginLib\AbstractPlugin implements PluginLib\PluginInterfa
      * @param string $type
      * @return bool true on success
      */
-    public static function createEvent($name, $environment='production', $type='release')
+    public static function createEvent($name, $environment = 'production', $type = 'release')
     {
         $data = array(
             "apiKey" => self::$apiKey,
@@ -236,7 +236,7 @@ class Plugin extends PluginLib\AbstractPlugin implements PluginLib\PluginInterfa
 
         curl_setopt_array($curlHandle, $curlOptions); 
 
-        if (! curl_exec($curlHandle)) { 
+        if (!curl_exec($curlHandle)) { 
             return false;
         } 
         curl_close($curlHandle); 
