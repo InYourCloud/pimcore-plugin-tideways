@@ -33,7 +33,7 @@ class Plugin extends PluginLib\AbstractPlugin implements PluginLib\PluginInterfa
     {
         parent::init();
 
-        if (!@class_exists('Tideways\Profiler')) {
+        if (!class_exists('Tideways\Profiler', false)) {
             return;
         }
 
