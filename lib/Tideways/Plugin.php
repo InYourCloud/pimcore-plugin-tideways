@@ -194,14 +194,47 @@ class Plugin extends PluginLib\AbstractPlugin implements PluginLib\PluginInterfa
     /**
      * Create Tideways event annotation via API
      *
-     * @param $title
+     * @param string $name
      * @param string $environment
      * @param string $type
-     * @todo implement event creation
+     * @return bool true on success
      */
-    public static function createEvent($title, $environment='production', $type='release')
+    public static function createEvent($name, $environment='production', $type='release')
     {
-        //curl -d '{"apiKey": "api key here", "name": "v1.0 released", "environment": "production", "type": "release"}' -X POST https://app.tideways.io/api/events
+        $data = array(
+            "apiKey": "api key here",
+            "name": $name,
+            "environment": $environment,
+            "type" => $type
+        );
+        
+        $dataString = json_encode($data);
+        
+        $curlOptions = array(
+            CURLOPT_CUSTOMREQUEST => "POST",
+            CURLOPT_URL => "https://app.tideways.io/api/events",
+            CURLOPT_RETURNTRANSFER => 1,
+            CURLOPT_FORBID_REUSE => 1,
+            CURLOPT_TIMEOUT => 4,
+            CURLOPT_HTTPHEADER, array(
+                'Content-Type: application/json',
+                'Content-Length: ' . strlen($dataString))
+            ),
+            CURLOPT_POSTFIELDS => $dataString,
+            CURLOPT_SSL_VERIFYPEER => false,
+            CURLOPT_FRESH_CONNECT => true
+        );
+
+        $curlHandle = curl_init(); 
+
+        curl_setopt_array($curlHandle, $curlOptions); 
+
+        if (! $result = curl_exec($curlHandle)) { 
+            // trigger_error(curl_error($curlHandle)); 
+            return false;
+        } 
+        curl_close($curlHandle); 
+        return true;         
     }
 
     /**
