@@ -79,9 +79,6 @@ Tideways functions:
  
 * \Tideways\Plugin::setTransactionName(string $transactionName)
 * \Tideways\Plugin::setCustomVariable(string $variable, mixed $value)
-
-Not implemented, yet:
-
 * \Tideways\Plugin::createEvent(string $eventName, string $environment='production', string $type='release')
 
 ## Tests
@@ -91,7 +88,6 @@ Not implemented, yet:
 ## Todo
 
 * Implement exception handler tracing 
-* Implement event creation
 
 ## Contributors
 
