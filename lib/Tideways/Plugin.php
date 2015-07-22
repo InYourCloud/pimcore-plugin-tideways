@@ -225,7 +225,7 @@ class Plugin extends PluginLib\AbstractPlugin implements PluginLib\PluginInterfa
             CURLOPT_TIMEOUT => 4,
             CURLOPT_HTTPHEADER => array(
                 'Content-Type: application/json',
-                'Content-Length: ' . strlen($dataString))
+                'Content-Length: ' . strlen($dataString)
             ),
             CURLOPT_POSTFIELDS => $dataString,
             CURLOPT_SSL_VERIFYPEER => false,
